@@ -1,25 +1,39 @@
-import logo from './logo.svg';
+import React from 'react';
 import './App.css';
+import Apps from './New';
+import { Test } from './Test' ;
 
-function App() {
+export function App() {
+  let name = 'Akshay Pratap Singh'; 
+  let age = 19;    
+  let loginstatus = true;                                
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+        <h1 className = "heading1">Welcome to React App {name}</h1>
+        <h2>{age >= 18 ? "You can Vote" : "You can not vote" }</h2>
+        <Test props={loginstatus} />
+        {/* {
+          loginstatus === true ? <ShowMessage /> : <ShowError />
+        } */}
+        <Apps/>
     </div>
+    
+    
+    
+      );
+}
+
+function ShowMessage(){
+  return (
+    <h3> You are logged in Successfully!!!</h3>
+   
   );
 }
 
-export default App;
+function ShowError() {
+  return (
+  <h3>Error on logged in!!!</h3> 
+  );
+}
+
+ export default App;
